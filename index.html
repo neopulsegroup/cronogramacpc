@@ -383,6 +383,31 @@ select { cursor:pointer; }
   color: var(--text);
 }
 
+/* ── VIEW SWITCHER ── */
+.view-switcher { display: flex; gap: 4px; background: var(--bg-hover); border-radius: 20px; padding: 2px; margin-right: auto; }
+.view-btn { padding: 6px 14px; border-radius: 18px; font-size: 11px; font-weight: 600; cursor: pointer; border: none; background: transparent; color: var(--text-2); transition: var(--transition); display: flex; align-items: center; gap: 6px; }
+.view-btn.active { background: var(--bg-card); color: var(--text); box-shadow: var(--shadow); }
+.view-btn svg { opacity: .7; }
+
+/* ── LIST VIEW ── */
+.list-view-table { width: 100%; border-collapse: collapse; background: var(--bg-card); border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); margin-top: 10px; }
+.list-view-table th { text-align: left; padding: 12px 16px; background: var(--bg-hover); font-size: 11px; color: var(--text-3); text-transform: uppercase; letter-spacing: .05em; border-bottom: 1px solid var(--border); }
+.list-view-table td { padding: 12px 16px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+.list-view-table tr:last-child td { border-bottom: none; }
+.list-view-table tr:hover { background: var(--bg-hover); }
+
+/* ── KANBAN VIEW ── */
+.kanban-board { display: flex; gap: 16px; overflow-x: auto; padding-bottom: 10px; margin-top: 10px; min-height: 400px; }
+.kanban-col { flex: 1; min-width: 250px; background: var(--bg-hover); border-radius: var(--radius); padding: 12px; display: flex; flex-direction: column; gap: 10px; border: 1px solid var(--border); }
+.kanban-col-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; padding: 0 4px; }
+.kanban-col-title { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-2); }
+.kanban-col-count { font-size: 10px; background: var(--bg-card); padding: 2px 6px; border-radius: 10px; border: 1px solid var(--border); }
+.kanban-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px; box-shadow: var(--shadow); cursor: pointer; transition: var(--transition); }
+.kanban-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.kanban-card-cat { font-size: 10px; color: var(--text-3); margin-bottom: 6px; display: flex; align-items: center; gap: 4px; }
+.kanban-card-label { font-size: 13px; font-weight: 500; margin-bottom: 8px; line-height: 1.4; }
+.kanban-card-foot { display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--border); padding-top: 8px; margin-top: 8px; }
+
 @media (max-width:640px) {
   .kpi-grid { grid-template-columns:repeat(3,1fr); }
   .tl-name { width:120px; }
@@ -548,6 +573,7 @@ let isDark = false;
 let currentUser = null; // logged-in user object
 let searchQuery = '';
 let statusFilters = { done: true, in_progress: true, blocked: true, todo: true };
+let layoutView = 'classic'; // 'classic', 'list', 'kanban'
 
 // ── INIT ──
 document.addEventListener('DOMContentLoaded', async () => {
@@ -706,6 +732,11 @@ function setView(v, btn) {
   render(true);
 }
 
+function setLayoutView(v) {
+  layoutView = v;
+  render(true);
+}
+
 // ── DEADLINE HELPERS ──
 function deadlineStatus(dateStr) {
   if (!dateStr) return null;
@@ -759,31 +790,127 @@ function render(full = false) {
   }).filter(Boolean);
 
   let h = '';
-  if (VIEW === 'client') {
+  if (layoutView === 'classic') {
     h += renderTimeline();
     h += '<div class="sections-list">';
-    filtered.forEach((s,i) => {
-      const originalIdx = DATA.sections.findIndex(orig => orig.id === s.id);
-      h += renderSectionClient(s, originalIdx);
-    });
+    if (VIEW === 'client') {
+      filtered.forEach(s => {
+        const originalIdx = DATA.sections.findIndex(orig => orig.id === s.id);
+        h += renderSectionClient(s, originalIdx);
+      });
+    } else {
+      filtered.forEach(s => {
+        const originalIdx = DATA.sections.findIndex(orig => orig.id === s.id);
+        h += renderSectionAdmin(s, originalIdx);
+      });
+      h += `<div class="add-cat-wrap"><button class="btn-add-cat" onclick="openNewCatModal()"><span style="font-size:16px">+</span> Adicionar nova categoria</button></div>`;
+    }
     h += '</div>';
-    if (!filtered.length) h += `<div class="empty"><div class="empty-icon">🔍</div><div class="empty-title">Nenhuma demanda encontrada</div></div>`;
-  } else {
-    h += renderTimeline();
-    h += '<div class="sections-list">';
-    filtered.forEach((s,i) => {
-      const originalIdx = DATA.sections.findIndex(orig => orig.id === s.id);
-      h += renderSectionAdmin(s, originalIdx);
-    });
-    h += '</div>';
-    h += `<div class="add-cat-wrap"><button class="btn-add-cat" onclick="openNewCatModal()"><span style="font-size:16px">+</span> Adicionar nova categoria</button></div>`;
+  } else if (layoutView === 'list') {
+    h += renderListView(filtered);
+  } else if (layoutView === 'kanban') {
+    h += renderKanbanView(filtered);
   }
+
+  if (!filtered.length && layoutView !== 'kanban') {
+    h += `<div class="empty"><div class="empty-icon">🔍</div><div class="empty-title">Nenhuma demanda encontrada</div></div>`;
+  }
+
   contentRoot.innerHTML = h;
+}
+
+function renderListView(sections) {
+  let h = '<table class="list-view-table">';
+  h += '<thead><tr><th>Demanda</th><th>Status</th><th>Prazo</th><th>Progresso</th></tr></thead><tbody>';
+  
+  sections.forEach(s => {
+    s.tasks.forEach(t => {
+      const st = STATUS_MAP[t.s];
+      const dStatus = deadlineStatus(t.d);
+      const dLabel = t.d ? new Date(t.d + 'T00:00:00').toLocaleDateString('pt-PT') : '-';
+      
+      const progress = t.p !== undefined ? t.p : (t.s === 'done' ? 100 : (t.s === 'in_progress' ? 50 : 0));
+      
+      h += `<tr>
+        <td>
+          <div style="font-weight:500">${escHtml(t.label)}</div>
+          <div style="font-size:10px;color:var(--text-3)">${escHtml(s.label)}</div>
+        </td>
+        <td><span class="badge ${st.bc}">${st.bl}</span></td>
+        <td><span class="tl-date-badge ${dStatus || ''}">${dLabel}</span></td>
+        <td>
+          <div class="mini-bar"><div class="mini-bar-fg" style="width:${progress}%;background:var(--accent)"></div></div>
+          <div style="font-size:10px;margin-top:2px">${progress}%</div>
+        </td>
+      </tr>`;
+    });
+  });
+  
+  h += '</tbody></table>';
+  return h;
+}
+
+function renderKanbanView(sections) {
+  const cols = {
+    todo: { title: 'Pendentes', tasks: [] },
+    in_progress: { title: 'Em Produção', tasks: [] },
+    done: { title: 'Concluídos', tasks: [] },
+    blocked: { title: 'Bloqueados', tasks: [] }
+  };
+
+  sections.forEach(s => {
+    s.tasks.forEach(t => {
+      if (cols[t.s]) cols[t.s].tasks.push({ ...t, sectionLabel: s.label });
+    });
+  });
+
+  let h = '<div class="kanban-board">';
+  Object.keys(cols).forEach(key => {
+    const col = cols[key];
+    h += `<div class="kanban-col">
+      <div class="kanban-col-head">
+        <span class="kanban-col-title">${col.title}</span>
+        <span class="kanban-col-count">${col.tasks.length}</span>
+      </div>`;
+    
+    col.tasks.forEach(t => {
+      const dStatus = deadlineStatus(t.d);
+      const dLabel = t.d ? new Date(t.d + 'T00:00:00').toLocaleDateString('pt-PT') : '';
+      const progress = t.p !== undefined ? t.p : (t.s === 'done' ? 100 : (t.s === 'in_progress' ? 50 : 0));
+      
+      h += `<div class="kanban-card">
+        <div class="kanban-card-cat">📂 ${escHtml(t.sectionLabel)}</div>
+        <div class="kanban-card-label">${escHtml(t.label)}</div>
+        <div class="kanban-card-foot">
+          <div class="mini-bar" style="width:40px"><div class="mini-bar-fg" style="width:${progress}%;background:var(--accent)"></div></div>
+          ${t.d ? `<span class="tl-date-badge ${dStatus || ''}" style="font-size:9px">${dLabel}</span>` : ''}
+        </div>
+      </div>`;
+    });
+    
+    h += '</div>';
+  });
+  h += '</div>';
+  return h;
 }
 
 function renderControls() {
   return `
     <div class="controls-row">
+      <div class="view-switcher">
+        <button class="view-btn ${layoutView==='classic'?'active':''}" onclick="setLayoutView('classic')" title="Vista Clássica">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+          Clássico
+        </button>
+        <button class="view-btn ${layoutView==='list'?'active':''}" onclick="setLayoutView('list')" title="Vista de Lista">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          Lista
+        </button>
+        <button class="view-btn ${layoutView==='kanban'?'active':''}" onclick="setLayoutView('kanban')" title="Vista Kanban">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/><line x1="15" y1="21" x2="15" y2="9"/></svg>
+          Kanban
+        </button>
+      </div>
       <div class="search-wrap">
         <span class="search-icon">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
