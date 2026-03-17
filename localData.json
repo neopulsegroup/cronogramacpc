@@ -6,9 +6,9 @@
       "color": "#1a5c42",
       "label": "Parte Pública",
       "sub": "Site, idioma e contactos",
-      "progress": 75,
+      "progress": 50,
       "notes": "",
-      "updatedAt": "2026-03-13T21:29:53.778Z",
+      "updatedAt": "2026-03-17T13:17:12.976Z",
       "tasks": [
         {
           "id": "p1",
@@ -29,7 +29,20 @@
         {
           "id": "p4",
           "label": "Formulário de contactos com envio real (backend/email)",
-          "s": "todo"
+          "s": "todo",
+          "priority": "high"
+        },
+        {
+          "id": "mmukvdpjnhf8",
+          "label": "ADicionando",
+          "s": "in_progress",
+          "deadline": null
+        },
+        {
+          "id": "mmukvjzhdbm0",
+          "label": "Papo de maluco",
+          "s": "in_progress",
+          "deadline": null
         }
       ],
       "deadline": "2026-03-31"
