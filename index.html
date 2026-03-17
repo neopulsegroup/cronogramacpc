@@ -460,7 +460,11 @@ select { cursor:pointer; }
 
 <!-- MAIN -->
 <div class="shell">
-  <div class="page" id="app"></div>
+  <div class="page">
+    <div id="controls-root"></div>
+    <div id="stats-root"></div>
+    <div id="content-root"></div>
+  </div>
 </div>
 
 <!-- MODAL: Add/Edit Category -->
@@ -599,7 +603,7 @@ async function doLogin() {
   err.classList.remove('show');
   VIEW = 'admin';
   updateAuthUI();
-  render();
+  render(true);
   toast(`Bem-vindo/a, ${user.name}!`);
 }
 
@@ -608,14 +612,14 @@ function doLogout() {
   localStorage.removeItem('cpc-session');
   VIEW = 'client';
   updateAuthUI();
-  render();
+  render(true);
   toast('Sessão terminada');
 }
 
 function requireLogin() {
   if (currentUser) {
-    VIEW = 'admin';
-    render();
+  VIEW = 'admin';
+  render(true);
   } else {
     document.getElementById('login-screen').classList.add('show');
     setTimeout(() => document.getElementById('login-email').focus(), 200);
@@ -699,7 +703,7 @@ function setView(v, btn) {
   VIEW = v;
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
   btn.classList.add('on');
-  render();
+  render(true);
 }
 
 // ── DEADLINE HELPERS ──
@@ -724,12 +728,18 @@ function deadlineLabel(dateStr) {
 }
 
 // ── RENDER ──
-function render() {
-  const app = document.getElementById('app');
-  const g = globalStats();
+// ── RENDER ──
+function render(full = false) {
+  const statsRoot = document.getElementById('stats-root');
+  const contentRoot = document.getElementById('content-root');
+  const controlsRoot = document.getElementById('controls-root');
   
-  let h = renderControls();
-  h += renderKPIs(g);
+  if (full || !controlsRoot.innerHTML) {
+    controlsRoot.innerHTML = renderControls();
+  }
+
+  const g = globalStats();
+  statsRoot.innerHTML = renderKPIs(g);
 
   // Filter Data
   const filtered = (DATA.sections || []).map(s => {
@@ -748,11 +758,11 @@ function render() {
     return null;
   }).filter(Boolean);
 
+  let h = '';
   if (VIEW === 'client') {
     h += renderTimeline();
     h += '<div class="sections-list">';
     filtered.forEach((s,i) => {
-      // Find original index for actions
       const originalIdx = DATA.sections.findIndex(orig => orig.id === s.id);
       h += renderSectionClient(s, originalIdx);
     });
@@ -768,7 +778,7 @@ function render() {
     h += '</div>';
     h += `<div class="add-cat-wrap"><button class="btn-add-cat" onclick="openNewCatModal()"><span style="font-size:16px">+</span> Adicionar nova categoria</button></div>`;
   }
-  app.innerHTML = h;
+  contentRoot.innerHTML = h;
 }
 
 function renderControls() {
@@ -797,7 +807,7 @@ function updateSearch(val) {
 
 function toggleFilter(status) {
   statusFilters[status] = !statusFilters[status];
-  render();
+  render(true); // Re-render controls to update active class
 }
 
 function renderKPIs(g) {
