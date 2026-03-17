@@ -1,0 +1,402 @@
+{
+  "sections": [
+    {
+      "id": "pub",
+      "icon": "🌐",
+      "color": "#1a5c42",
+      "label": "Parte Pública",
+      "sub": "Site, idioma e contactos",
+      "progress": 75,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:29:53.778Z",
+      "tasks": [
+        {
+          "id": "p1",
+          "label": "Página inicial (home) com CTAs para registo/login como Pessoa Migrante e Empresa",
+          "s": "done",
+          "deadline": null
+        },
+        {
+          "id": "p2",
+          "label": "Páginas públicas: Sobre, Como Funciona, Contactos + FAQ",
+          "s": "done"
+        },
+        {
+          "id": "p3",
+          "label": "Seleção de idioma (PT/EN/ES) com persistência",
+          "s": "done"
+        },
+        {
+          "id": "p4",
+          "label": "Formulário de contactos com envio real (backend/email)",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "reg",
+      "icon": "👤",
+      "color": "#185FA5",
+      "label": "Registos e Perfis",
+      "sub": "Auth, roles e tipos de utilizador",
+      "progress": 67,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:27:36.066Z",
+      "tasks": [
+        {
+          "id": "r1",
+          "label": "Registo/login por email para migrantes e empresas",
+          "s": "done"
+        },
+        {
+          "id": "r2",
+          "label": "Registo por telemóvel/OTP para migrantes",
+          "s": "todo"
+        },
+        {
+          "id": "r3",
+          "label": "Perfis internos CPC (mediador, jurista, psicólogo, gestor, coordenação, admin)",
+          "s": "done"
+        },
+        {
+          "id": "r4",
+          "label": "Acesso ao painel CPC por perfil interno",
+          "s": "done"
+        },
+        {
+          "id": "r5",
+          "label": "Cada tipo só acede ao que lhe diz respeito (rotas protegidas por role + redirecionamento)",
+          "s": "done"
+        },
+        {
+          "id": "r6",
+          "label": "Empresa: registo com nome e NIF",
+          "s": "done"
+        },
+        {
+          "id": "r7",
+          "label": "Empresa: campo \"área de atividade\" no registo/perfil",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "tri",
+      "icon": "📋",
+      "color": "#534AB7",
+      "label": "Triagem Inicial",
+      "sub": "Multi-passos, gravação e recomendações",
+      "progress": 75,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:27:41.781Z",
+      "tasks": [
+        {
+          "id": "tr1",
+          "label": "Triagem inicial multi-passos no fluxo do migrante, obrigatória antes do dashboard",
+          "s": "done"
+        },
+        {
+          "id": "tr2",
+          "label": "Gravação da triagem no Firestore (triage) com mapeamento para campos estruturados (legal_status, work_status, language_level, urgencies, interests)",
+          "s": "done"
+        },
+        {
+          "id": "tr3",
+          "label": "Autosave da triagem (rascunho local + sincronização remota)",
+          "s": "done"
+        },
+        {
+          "id": "tr4",
+          "label": "\"Perfil de necessidades\" dedicado + recomendações/direcionamento automático (trilha/sessão/CV)",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "age",
+      "icon": "📅",
+      "color": "#993C1D",
+      "label": "Agendamentos e Atendimento",
+      "sub": "Sessões, notas e lembretes",
+      "progress": 50,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:27:46.121Z",
+      "tasks": [
+        {
+          "id": "a1",
+          "label": "Migrante: marcar sessões (mediador/jurista/psicóloga) e ver sessões marcadas",
+          "s": "done"
+        },
+        {
+          "id": "a2",
+          "label": "Equipa CPC: criar, reagendar e cancelar sessões; filtrar por área e profissional",
+          "s": "done"
+        },
+        {
+          "id": "a3",
+          "label": "Equipa CPC: registar notas básicas das sessões",
+          "s": "todo"
+        },
+        {
+          "id": "a4",
+          "label": "Lembretes automáticos de sessão (email/notificações)",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "trl",
+      "icon": "🎓",
+      "color": "#0F6E56",
+      "label": "Trilhas Formativas",
+      "sub": "Catálogo, módulos, quizzes e progresso",
+      "progress": 60,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:27:51.688Z",
+      "tasks": [
+        {
+          "id": "tf1",
+          "label": "Migrante: catálogo de trilhas, detalhe, visualização de módulos (texto/vídeo/pdf)",
+          "s": "done"
+        },
+        {
+          "id": "tf2",
+          "label": "Progresso por utilizador (user_trail_progress; demo quando não há dados)",
+          "s": "done"
+        },
+        {
+          "id": "tf3",
+          "label": "Equipa CPC: criar trilhas e gerir/editar módulos",
+          "s": "done"
+        },
+        {
+          "id": "tf4",
+          "label": "Alternância de visualização grade/lista em \"Trilhas existentes\" (CPC)",
+          "s": "done"
+        },
+        {
+          "id": "tf5",
+          "label": "Quizzes simples (modelo de dados, viewer, validação)",
+          "s": "todo"
+        },
+        {
+          "id": "tf6",
+          "label": "Trilha recomendada com base na triagem",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "emp",
+      "icon": "💼",
+      "color": "#854F0B",
+      "label": "Ligação ao Emprego",
+      "sub": "Ofertas, candidaturas e CVs",
+      "progress": 67,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:27:56.203Z",
+      "tasks": [
+        {
+          "id": "e1",
+          "label": "Migrante: ver ofertas e detalhe",
+          "s": "done"
+        },
+        {
+          "id": "e2",
+          "label": "Migrante: candidatar-se diretamente (job_applications) com carta de apresentação opcional",
+          "s": "done"
+        },
+        {
+          "id": "e3",
+          "label": "Migrante: acompanhar estado/histórico de candidaturas",
+          "s": "todo"
+        },
+        {
+          "id": "e4",
+          "label": "Empresa: criar ofertas e listar ofertas",
+          "s": "done"
+        },
+        {
+          "id": "e5",
+          "label": "Empresa: editar ofertas",
+          "s": "todo"
+        },
+        {
+          "id": "e6",
+          "label": "Empresa: ver candidaturas recebidas por oferta e atualizar estado",
+          "s": "done"
+        },
+        {
+          "id": "e7",
+          "label": "Empresa: ver perfil do candidato (inclui CV/link quando disponível)",
+          "s": "done"
+        },
+        {
+          "id": "e8",
+          "label": "CPC: ver candidaturas e listar ofertas pendentes de aprovação",
+          "s": "done"
+        },
+        {
+          "id": "e9",
+          "label": "CPC: aprovar/rejeitar/moderar ofertas (alterar status)",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "cpc",
+      "icon": "🖥️",
+      "color": "#3B6D11",
+      "label": "Painel Equipa CPC",
+      "sub": "Backoffice, perfis e relatórios",
+      "progress": 67,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:28:00.002Z",
+      "tasks": [
+        {
+          "id": "c1",
+          "label": "Lista de migrantes com filtros + acesso ao perfil + consulta de triagem",
+          "s": "done"
+        },
+        {
+          "id": "c2",
+          "label": "Dashboard CPC com indicadores e exportação simples (CSV/PDF)",
+          "s": "done"
+        },
+        {
+          "id": "c3",
+          "label": "\"Ver perfil\" redireciona para página interna com layout idêntico ao dashboard do migrante",
+          "s": "done"
+        },
+        {
+          "id": "c4",
+          "label": "Reestruturação do layout da \"Visão geral\" do CPC (grid, KPIs, cards, widgets)",
+          "s": "done"
+        },
+        {
+          "id": "c5",
+          "label": "Overlay \"Em breve\" nas secções \"Capacidade Atual\" e \"Equipa em serviço\"",
+          "s": "done"
+        },
+        {
+          "id": "c6",
+          "label": "Relatórios/exportação abrangentes (atendimentos/ofertas/candidaturas) com filtros",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "com",
+      "icon": "💬",
+      "color": "#993556",
+      "label": "Comunicação e Notificações",
+      "sub": "Chat, emails automáticos e notificações",
+      "progress": 33,
+      "notes": "",
+      "updatedAt": "2026-03-13T21:28:05.403Z",
+      "tasks": [
+        {
+          "id": "n1",
+          "label": "Notificações/chat/pedidos urgentes (MVP/demo via localStorage)",
+          "s": "done"
+        },
+        {
+          "id": "n2",
+          "label": "Emails automáticos (criação de conta, lembretes, notificações de candidatura/oferta)",
+          "s": "todo"
+        },
+        {
+          "id": "n3",
+          "label": "Notificações in-app reais (coleção notifications) substituindo localStorage",
+          "s": "todo"
+        },
+        {
+          "id": "n4",
+          "label": "Mensagens internas persistidas (chat real) e/ou fórum",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    },
+    {
+      "id": "infra",
+      "icon": "⚙️",
+      "color": "#5a5a8a",
+      "label": "Infraestrutura e Migração",
+      "sub": "Firebase, CI/CD e validação",
+      "progress": 90,
+      "notes": "Migração Supabase → Firebase concluída. Pendente: validação pós-migração completa.",
+      "updatedAt": "2026-03-13T21:28:11.691Z",
+      "tasks": [
+        {
+          "id": "i1",
+          "label": "Remoção completa de dependências do Supabase no runtime",
+          "s": "done"
+        },
+        {
+          "id": "i2",
+          "label": "Refatoração para Firestore nas páginas do Migrante",
+          "s": "done"
+        },
+        {
+          "id": "i3",
+          "label": "Refatoração para Firestore nas páginas da Empresa",
+          "s": "done"
+        },
+        {
+          "id": "i4",
+          "label": "Refatoração para Firestore nas páginas do CPC",
+          "s": "done"
+        },
+        {
+          "id": "i5",
+          "label": "Remoção de variáveis de ambiente do Supabase (.env)",
+          "s": "done"
+        },
+        {
+          "id": "i6",
+          "label": "Remoção do pacote @supabase/supabase-js e atualização do lockfile",
+          "s": "done"
+        },
+        {
+          "id": "i7",
+          "label": "Script de migração Supabase → Firebase (Auth + Firestore) com dry-run",
+          "s": "done"
+        },
+        {
+          "id": "i8",
+          "label": "Adição de dependência firebase-admin (Admin SDK)",
+          "s": "done"
+        },
+        {
+          "id": "i9",
+          "label": "Automação: validação e notificações do project-tasks.md (CI + revisão diária)",
+          "s": "done"
+        },
+        {
+          "id": "i10",
+          "label": "Migração completa: definir escopo e mapeamentos (tabelas/coleções/campos)",
+          "s": "todo"
+        },
+        {
+          "id": "i11",
+          "label": "Migração completa: executar dry-run e gerar relatório de inconsistências",
+          "s": "todo"
+        },
+        {
+          "id": "i12",
+          "label": "Validação pós-migração (contagens, integridade, permissões, índices)",
+          "s": "todo"
+        }
+      ],
+      "deadline": "2026-03-31"
+    }
+  ]
+}
