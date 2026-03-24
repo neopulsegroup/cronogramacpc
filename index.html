@@ -1653,12 +1653,13 @@ function renderHistory() {
   const filtered = DATA.history.filter(item => {
     if (VIEW === 'client') {
       if (!item.description.includes('para Concluído') && !item.description.includes('para Em curso')) return false;
+    if (VIEW === 'client') {
+      if (!item.description.includes('para Concluído') && !item.description.includes('para Em curso')) return false;
     }
-    const itemDate = new Date(item.timestamp);
-    const diffTime = Math.abs(now - itemDate);
-    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    return diffDays <= historyFilterDays;
+    return true;
   });
+
+  filtered.sort((a,b) => new Date(b.timestamp) - new Date(a.timestamp));
 
   const visible = filtered.slice(0, historyVisibleCount);
 
@@ -1668,11 +1669,6 @@ function renderHistory() {
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="9"/></svg>
         Histórico de Atualizações
       </div>
-      <div class="history-filters">
-        <button class="filter-btn ${historyFilterDays===7?'active':''}" onclick="setHistoryFilter(7)">Últimos 7 dias</button>
-        <button class="filter-btn ${historyFilterDays===15?'active':''}" onclick="setHistoryFilter(15)">Últimos 15 dias</button>
-        <button class="filter-btn ${historyFilterDays===30?'active':''}" onclick="setHistoryFilter(30)">Últimos 30 dias</button>
-      </div>
       <div class="history-list">
   `;
 
@@ -1680,8 +1676,14 @@ function renderHistory() {
     h += `<div style="padding: 20px; text-align: center; color: var(--text-3); font-size: 13px;">Nenhuma atualização encontrada para este período.</div>`;
   } else {
     visible.forEach(item => {
+      let bc = 'var(--accent)';
+      const d = item.description || '';
+      if (d.includes('para Em curso')) bc = '#f59e0b';
+      else if (d.includes('para Bloqueado')) bc = '#ef4444';
+      else if (d.includes('para Concluído') || d.includes(' Concluído')) bc = 'var(--done-fg)';
+
       h += `
-        <div class="history-item">
+        <div class="history-item" style="border-left-color: ${bc}">
           <div class="history-info">
             <div class="history-desc">${escHtml(item.description)}</div>
             <div class="history-meta">
@@ -1706,12 +1708,6 @@ function renderHistory() {
 
   h += '</div>';
   return h;
-}
-
-function setHistoryFilter(days) {
-  historyFilterDays = days;
-  historyVisibleCount = 15; // Reset count when changing filter
-  render();
 }
 
 function loadMoreHistory() {
