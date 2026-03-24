@@ -631,6 +631,7 @@ const PRIORITY_MAP = {
 let DATA = { sections:[] };
 let VIEW = 'client';
 let expanded = {};
+let expandedSubcats = {};
 let editingCatIdx = null;
 let editingTaskKey = null; // {si, ti}
 let selectedColor = COLORS[0];
@@ -1078,9 +1079,14 @@ function renderSectionClient(s, i) {
   });
 
   Object.keys(groups).forEach(sc => {
+    const scId = `${s.id}-sub-${sc}`;
+    const op = expandedSubcats[scId] !== false;
     if (sc) {
-      h += `<div style="padding:6px 0; font-weight:600; font-size:11px; color:var(--text-3); text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--border); margin-bottom:4px;">${escHtml(sc)}</div>`;
+      h += `<div style="padding:6px 0; font-weight:600; font-size:11px; color:var(--text-3); text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--border); margin-bottom:4px; display:flex; justify-content:space-between; cursor:pointer;" onclick="toggleSubcat('${s.id}', '${escHtml(sc)}')">
+        <span>${escHtml(sc)}</span> <span style="font-size:10px">${op ? '▼' : '▶'}</span>
+      </div>`;
     }
+    h += `<div class="subcat-body" style="display:${op || !sc ? 'block' : 'none'}">`;
     groups[sc].forEach(({t, ti}) => {
       const scInfo = STATUS_MAP[t.s] || STATUS_MAP.todo;
       const tds = deadlineStatus(t.deadline);
@@ -1101,6 +1107,7 @@ function renderSectionClient(s, i) {
         <span class="badge ${scInfo.bc}">${scInfo.bl}</span>
       </div>`;
     });
+    h += '</div>';
   });
 
   if (!s.tasks.length) h += `<div style="padding:12px 0;color:var(--text-3);font-size:12px;text-align:center">Sem subcategorias.</div>`;
@@ -1142,9 +1149,15 @@ function renderSectionAdmin(s, i) {
   });
 
   Object.keys(adminGroups).forEach(sc => {
+    const scId = `${s.id}-sub-${sc}`;
+    const op = expandedSubcats[scId] !== false;
     if (sc) {
-      h += `<div style="padding:6px 0; font-weight:600; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--border); margin-bottom:4px; margin-top:8px;">${escHtml(sc)}</div>`;
+      h += `<div style="padding:6px 0; font-weight:600; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.04em; border-bottom:1px solid var(--border); margin-bottom:4px; margin-top:8px; display:flex; justify-content:space-between; align-items:center; cursor:pointer;" onclick="toggleSubcat('${s.id}', '${escHtml(sc)}')">
+        <span style="display:flex; align-items:center; gap:8px;">${escHtml(sc)} <button class="tiny-btn" onclick="renameSubcategory(${i}, '${escHtml(sc)}'); event.stopPropagation();" title="Renomear Subcategoria">✎</button></span> 
+        <span style="font-size:10px">${op ? '▼' : '▶'}</span>
+      </div>`;
     }
+    h += `<div class="subcat-body" style="display:${op || !sc ? 'block' : 'none'}">`;
     adminGroups[sc].forEach(({t, ti}) => {
       const scInfo = STATUS_MAP[t.s] || STATUS_MAP.todo;
       const tds = deadlineStatus(t.deadline);
@@ -1179,6 +1192,7 @@ function renderSectionAdmin(s, i) {
         </div>
       </div>`;
     });
+    h += '</div>';
   });
 
   if (!s.tasks.length) h += `<div style="padding:12px 0;color:var(--text-3);font-size:12px;text-align:center">Sem subcategorias. Adiciona abaixo.</div>`;
@@ -1230,6 +1244,36 @@ function renderSectionAdmin(s, i) {
 
 // ── INTERACTIONS ──
 function toggleSec(id) { expanded[id] = !expanded[id]; render(); }
+
+function toggleSubcat(sId, sc) {
+  const key = `${sId}-sub-${sc}`;
+  if (expandedSubcats[key] === undefined) expandedSubcats[key] = false;
+  else expandedSubcats[key] = !expandedSubcats[key];
+  render();
+}
+
+function renameSubcategory(si, oldName) {
+  const newName = prompt(`Renomear subcategoria "${oldName}" para:`, oldName);
+  if (newName === null) return;
+  const val = newName.trim();
+  if (!val || val === oldName) return;
+  
+  DATA.sections[si].tasks.forEach(t => {
+    if ((t.subcategory || '') === oldName) {
+      t.subcategory = val;
+    }
+  });
+  
+  const oldKey = `${DATA.sections[si].id}-sub-${oldName}`;
+  const newKey = `${DATA.sections[si].id}-sub-${val}`;
+  if (expandedSubcats[oldKey] !== undefined) {
+    expandedSubcats[newKey] = expandedSubcats[oldKey];
+    delete expandedSubcats[oldKey];
+  }
+  
+  addHistory('update_task', `Subcategoria "${oldName}" renomeada para "${val}" (Módulo: ${DATA.sections[si].label})`);
+  markUpdated(si); render(); scheduleSave();
+}
 
 function autoUpdateProgress(si) {
   const s = DATA.sections[si];
