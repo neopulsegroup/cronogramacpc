@@ -364,7 +364,7 @@
       "sub": "Backoffice, perfis e relatórios",
       "progress": 83,
       "notes": "",
-      "updatedAt": "2026-03-24T14:55:24.559Z",
+      "updatedAt": "2026-03-24T14:55:57.663Z",
       "tasks": [
         {
           "id": "c1",
@@ -436,21 +436,24 @@
           "label": "Secção de Atividades - Registro de Atividades: Duração automática",
           "s": "done",
           "priority": "medium",
-          "deadline": null
+          "deadline": null,
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4nzbvjq9xf",
           "label": "Secção de Atividades - Registro de Atividades: Consultor(es)",
           "s": "todo",
           "priority": "medium",
-          "deadline": "2026-04-03"
+          "deadline": "2026-04-03",
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4o0g2uu5g7",
           "label": "Secção de Atividades - Registro de Atividades: Participantes (migrantes + consultores)",
           "s": "todo",
           "priority": "medium",
-          "deadline": "2026-04-03"
+          "deadline": "2026-04-03",
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4o0pghz8j6",
@@ -465,14 +468,16 @@
           "label": "Secção de Atividades - Registro de Atividades: Local",
           "s": "done",
           "priority": "medium",
-          "deadline": null
+          "deadline": null,
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4o19lopr55",
           "label": "Secção de Atividades - Registro de Atividades: Tipo (Presencial / Online / Híbrido)",
           "s": "done",
           "priority": "medium",
-          "deadline": null
+          "deadline": null,
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4o1we5duyz",
@@ -712,6 +717,41 @@
     }
   ],
   "history": [
+    {
+      "id": "mn4qlucf7bq2",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Tipo (Presencial / Online / Híbrido)\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:57.663Z"
+    },
+    {
+      "id": "mn4qlr8ru7qi",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Participantes (migrantes + consultores)\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:53.643Z"
+    },
+    {
+      "id": "mn4qlnxgzs4s",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Consultor(es)\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:49.348Z"
+    },
+    {
+      "id": "mn4qllshov6j",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Duração automática\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:46.577Z"
+    },
+    {
+      "id": "mn4qliw95jmf",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Local\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:42.825Z"
+    },
     {
       "id": "mn4ql4svvvp5",
       "type": "update_task",

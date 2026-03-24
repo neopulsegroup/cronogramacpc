@@ -586,6 +586,22 @@ select { cursor:pointer; }
   </div>
 </div>
 
+<!-- MODAL: Edit Task Subcategory -->
+<div class="modal-bg" id="subcat-modal">
+  <div class="modal">
+    <div class="modal-title">Mover Tarefa</div>
+    <div class="modal-field">
+      <div class="modal-lbl">Selecionar ou criar subcategoria</div>
+      <input type="text" id="subcat-input" list="subcat-datalist" placeholder="Escolha ou digite uma nova...">
+      <datalist id="subcat-datalist"></datalist>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('subcat-modal')">Cancelar</button>
+      <button class="btn-confirm" onclick="saveSubcatMove()">Mover</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast-wrap" id="toasts"></div>
 
 <script>
@@ -1169,7 +1185,10 @@ function renderSectionAdmin(s, i) {
 
   h += `</div>
     <div class="add-task-row">
-      <input class="add-task-input" type="text" id="newtask-sub-${i}" placeholder="Subcategoria…" style="max-width:130px">
+      <input class="add-task-input" type="text" id="newtask-sub-${i}" list="dl-sub-${i}" placeholder="Subcategoria…" style="max-width:130px">
+      <datalist id="dl-sub-${i}">
+        ${Object.keys(adminGroups).filter(Boolean).map(g => `<option value="${escHtml(g)}"></option>`).join('')}
+      </datalist>
       <input class="add-task-input" type="text" id="newtask-${i}" placeholder="Nova tarefa…" onkeydown="if(event.key==='Enter')addTask(${i})">
       <select class="add-task-select" id="newtask-s-${i}">
         <option value="todo">Pendente</option>
@@ -1262,13 +1281,30 @@ function editTaskRequester(si, ti) {
 }
 
 function editTaskSubcategory(si, ti) {
+  editingTaskKey = {si, ti};
+  const s = DATA.sections[si];
+  const curr = s.tasks[ti].subcategory || '';
+  const input = document.getElementById('subcat-input');
+  input.value = curr;
+  
+  const exist = Array.from(new Set(s.tasks.map(t => t.subcategory).filter(Boolean)));
+  const dl = document.getElementById('subcat-datalist');
+  dl.innerHTML = exist.map(e => `<option value="${escHtml(e)}"></option>`).join('');
+  
+  document.getElementById('subcat-modal').classList.add('open');
+  setTimeout(() => input.focus(), 100);
+}
+
+function saveSubcatMove() {
+  if (!editingTaskKey) return;
+  const {si, ti} = editingTaskKey;
   const task = DATA.sections[si].tasks[ti];
-  const curr = task.subcategory || '';
-  const val = prompt('Digite a nova Subcategoria para mover a tarefa (deixe em branco para remover da subcategoria):', curr);
-  if (val === null) return;
-  task.subcategory = val.trim() || '';
+  const val = document.getElementById('subcat-input').value.trim();
+  task.subcategory = val || '';
   addHistory('update_task', `Subcategoria da tarefa "${task.label}" alterada para "${task.subcategory || 'Nenhuma'}" (Módulo: ${DATA.sections[si].label})`);
   markUpdated(si); render(); scheduleSave();
+  closeModal('subcat-modal');
+  toast('Subcategoria alterada');
 }
 
 function setProgress(si, val) {
@@ -1436,10 +1472,13 @@ function saveCategory() {
 }
 
 
-['cat-modal','task-date-modal'].forEach(id => {
-  document.getElementById(id).addEventListener('click', e => {
-    if (e.target === e.currentTarget) closeModal(id);
-  });
+['cat-modal','task-date-modal','subcat-modal'].forEach(id => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('click', e => {
+      if (e.target === e.currentTarget) closeModal(id);
+    });
+  }
 });
 
 // ── TOAST ──
