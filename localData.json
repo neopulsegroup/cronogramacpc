@@ -6,9 +6,9 @@
       "color": "#1a5c42",
       "label": "Parte Pública",
       "sub": "Site, idioma e contactos",
-      "progress": 71,
+      "progress": 63,
       "notes": "",
-      "updatedAt": "2026-03-24T14:32:01.529Z",
+      "updatedAt": "2026-03-24T15:16:11.045Z",
       "tasks": [
         {
           "id": "p1",
@@ -55,6 +55,14 @@
           "id": "mmuutt6xquei",
           "label": "Política de Cookies e a Política de Privacidade",
           "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4rbo24uw4j",
+          "label": "TESTE",
+          "subcategory": "",
+          "s": "in_progress",
           "priority": "medium",
           "deadline": null
         }
@@ -717,6 +725,20 @@
     }
   ],
   "history": [
+    {
+      "id": "mn4rbulh2rtm",
+      "type": "update_task",
+      "description": "Status de \"TESTE\" alterado de Pendente para Em curso (Módulo: Parte Pública)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T15:16:11.045Z"
+    },
+    {
+      "id": "mn4rbo25u53b",
+      "type": "create_task",
+      "description": "Adicionada tarefa \"TESTE\" ao módulo \"Parte Pública\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T15:16:02.573Z"
+    },
     {
       "id": "mn4qlucf7bq2",
       "type": "update_task",
