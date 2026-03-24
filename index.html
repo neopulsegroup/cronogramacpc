@@ -1653,8 +1653,6 @@ function renderHistory() {
   const filtered = DATA.history.filter(item => {
     if (VIEW === 'client') {
       if (!item.description.includes('para Concluído') && !item.description.includes('para Em curso')) return false;
-    if (VIEW === 'client') {
-      if (!item.description.includes('para Concluído') && !item.description.includes('para Em curso')) return false;
     }
     return true;
   });
