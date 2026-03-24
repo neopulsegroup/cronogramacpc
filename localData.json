@@ -1,1 +1,1104 @@
-{"sections":[{"id":"pub","icon":"🌐","color":"#1a5c42","label":"Parte Pública","sub":"Site, idioma e contactos","progress":71,"notes":"","updatedAt":"2026-03-18T19:56:39.132Z","tasks":[{"id":"p1","label":"Página inicial (home) com CTAs para registo/login como Pessoa Migrante e Empresa","s":"done","deadline":null,"priority":"low"},{"id":"p2","label":"Páginas públicas: Sobre, Como Funciona, Contactos + FAQ","s":"done","priority":"low"},{"id":"p3","label":"Seleção de idioma (PT/EN/ES) com persistência","s":"done","priority":"low"},{"id":"p4","label":"Formulário de contactos com envio real (backend/email)","s":"todo","priority":"medium","deadline":"2026-03-27"},{"id":"mmuut5esg3j3","label":"Adicionar idioma Crioulo","s":"blocked","priority":"medium","deadline":null,"obs":"Até o presente momento não foi possível adicionar. Não foi encontrado uma linguagem específica de adaptação em sistema."},{"id":"mmuutns21odq","label":"Implementar Centro de Ajuda","s":"done","priority":"medium","deadline":"2026-03-20"},{"id":"mmuutt6xquei","label":"Política de Cookies e a Política de Privacidade","s":"done","priority":"medium","deadline":null}],"deadline":"2026-03-27"},{"id":"reg","icon":"👤","color":"#185FA5","label":"Registos e Perfis","sub":"Auth, roles e tipos de utilizador","progress":82,"notes":"","updatedAt":"2026-03-18T14:20:13.279Z","tasks":[{"id":"r1","label":"Registo/login por email para migrantes e empresas","s":"done","priority":"low"},{"id":"r2","label":"Registo por telemóvel/OTP para migrantes","s":"todo","deadline":"2026-04-01"},{"id":"r3","label":"Perfis internos CPC (mediador, jurista, psicólogo, gestor, coordenação, admin)","s":"done","priority":"low"},{"id":"r4","label":"Acesso ao painel CPC por perfil interno","s":"done","priority":"low"},{"id":"r5","label":"Cada tipo só acede ao que lhe diz respeito (rotas protegidas por role + redirecionamento)","s":"done","priority":"low"},{"id":"r6","label":"Empresa: registo com nome e NIF","s":"done","priority":"low"},{"id":"r7","label":"Empresa: campo \"área de atividade\" no registo/perfil","s":"todo","deadline":"2026-04-06"},{"id":"mmuuulhjr4pf","label":"Alterar o e-mail porto@oportoforte.com para geral@oportoforte.com","s":"done","priority":"low","deadline":null},{"id":"mmw3ma3nbggb","label":"Configuração de Regras de Perfil","s":"done","priority":"medium","deadline":null},{"id":"mmw3n5yqgifr","label":"Criação de funcionalidade de exclusão de cadastro de migrante","s":"done","priority":"medium","deadline":null},{"id":"mmw4orq685u4","label":"Implementação de um sistema de controle de acesso que verifique o status do usuário","s":"done","priority":"high","deadline":null}],"deadline":"2026-04-06"},{"id":"tri","icon":"📋","color":"#534AB7","label":"Triagem Inicial","sub":"Multi-passos, gravação e recomendações","progress":75,"notes":"","updatedAt":"2026-03-17T19:47:18.169Z","tasks":[{"id":"tr1","label":"Triagem inicial multi-passos no fluxo do migrante, obrigatória antes do dashboard","s":"done","priority":"low"},{"id":"tr2","label":"Gravação da triagem no Firestore (triage) com mapeamento para campos estruturados (legal_status, work_status, language_level, urgencies, interests)","s":"done","priority":"low"},{"id":"tr3","label":"Autosave da triagem (rascunho local + sincronização remota)","s":"done","priority":"low"},{"id":"tr4","label":"\"Perfil de necessidades\" dedicado + recomendações/direcionamento automático (trilha/sessão/CV)","s":"blocked","obs":"Depende de implementação de I.A."}],"deadline":"2026-04-22"},{"id":"age","icon":"📅","color":"#993C1D","label":"Agendamentos e Atendimento","sub":"Sessões, notas e lembretes","progress":40,"notes":"","updatedAt":"2026-03-20T18:50:02.396Z","tasks":[{"id":"a1","label":"Migrante: marcar sessões (mediador/jurista/psicóloga) e ver sessões marcadas","s":"done","priority":"low"},{"id":"a2","label":"Equipa CPC: criar, reagendar e cancelar sessões; filtrar por área e profissional","s":"done","priority":"low"},{"id":"a3","label":"Equipa CPC: registar notas básicas das sessões","s":"in_progress","deadline":"2026-03-27"},{"id":"a4","label":"Lembretes automáticos de sessão (email/notificações)","s":"todo","deadline":"2026-04-06"},{"id":"mmz97gnv9v87","label":"Modal de agendamento full overlay","s":"todo","priority":"medium","deadline":"2026-03-27"}],"deadline":"2026-04-06"},{"id":"trl","icon":"🎓","color":"#0F6E56","label":"Trilhas Formativas","sub":"Catálogo, módulos, quizzes e progresso","progress":67,"notes":"","updatedAt":"2026-03-17T19:47:12.290Z","tasks":[{"id":"tf1","label":"Migrante: catálogo de trilhas, detalhe, visualização de módulos (texto/vídeo/pdf)","s":"done","priority":"low"},{"id":"tf2","label":"Progresso por utilizador (user_trail_progress; demo quando não há dados)","s":"done","priority":"low"},{"id":"tf3","label":"Equipa CPC: criar trilhas e gerir/editar módulos","s":"done","priority":"low"},{"id":"tf4","label":"Alternância de visualização grade/lista em \"Trilhas existentes\" (CPC)","s":"done","priority":"low"},{"id":"tf5","label":"Quizzes simples (modelo de dados, viewer, validação)","s":"todo","deadline":"2026-04-01"},{"id":"tf6","label":"Trilha recomendada com base na triagem","s":"blocked","obs":"Depende de implementação de I.A."}],"deadline":"2026-04-01"},{"id":"emp","icon":"💼","color":"#854F0B","label":"Ligação ao Emprego","sub":"Ofertas, candidaturas e CVs","progress":67,"notes":"","updatedAt":"2026-03-17T17:05:54.829Z","tasks":[{"id":"e1","label":"Migrante: ver ofertas e detalhe","s":"done","priority":"low"},{"id":"e2","label":"Migrante: candidatar-se diretamente (job_applications) com carta de apresentação opcional","s":"done","priority":"low"},{"id":"e3","label":"Migrante: acompanhar estado/histórico de candidaturas","s":"todo","deadline":"2026-04-17"},{"id":"e4","label":"Empresa: criar ofertas e listar ofertas","s":"done","priority":"low"},{"id":"e5","label":"Empresa: editar ofertas","s":"todo","deadline":"2026-04-10"},{"id":"e6","label":"Empresa: ver candidaturas recebidas por oferta e atualizar estado","s":"done","priority":"low"},{"id":"e7","label":"Empresa: ver perfil do candidato (inclui CV/link quando disponível)","s":"done","priority":"low"},{"id":"e8","label":"CPC: ver candidaturas e listar ofertas pendentes de aprovação","s":"done","priority":"low"},{"id":"e9","label":"CPC: aprovar/rejeitar/moderar ofertas (alterar status)","s":"todo","deadline":"2026-04-10"}],"deadline":"2026-04-17"},{"id":"cpc","icon":"🖥️","color":"#3B6D11","label":"Painel Equipa CPC","sub":"Backoffice, perfis e relatórios","progress":83,"notes":"","updatedAt":"2026-03-18T14:21:51.619Z","tasks":[{"id":"c1","label":"Lista de migrantes com filtros + acesso ao perfil + consulta de triagem","s":"done","priority":"low"},{"id":"c2","label":"Dashboard CPC com indicadores e exportação simples (CSV/PDF)","s":"done","priority":"low"},{"id":"c3","label":"\"Ver perfil\" redireciona para página interna with layout idêntico ao dashboard do migrante","s":"done","priority":"low"},{"id":"c4","label":"Reestruturação do layout da \"Visão geral\" do CPC (grid, KPIs, cards, widgets)","s":"done","priority":"low"},{"id":"c5","label":"Overlay \"Em breve\" nas secções \"Capacidade Atual\" e \"Equipa em serviço\"","s":"done","priority":"low"},{"id":"c6","label":"Relatórios/exportação abrangentes (atendimentos/ofertas/candidaturas) with filters","s":"in_progress","deadline":"2026-03-27"}],"deadline":"2026-03-27"},{"id":"com","icon":"💬","color":"#993556","label":"Comunicação e Notificações","sub":"Chat, emails automáticos e notificações","progress":25,"notes":"","updatedAt":"2026-03-17T17:06:07.581Z","tasks":[{"id":"n1","label":"Notificações/chat/pedidos urgentes (MVP/demo via localStorage)","s":"done","priority":"low"},{"id":"n2","label":"Emails automáticos (criação de conta, lembretes, notificações de candidatura/oferta)","s":"todo","deadline":"2026-04-21"},{"id":"n3","label":"Notificações in-app reais (coleção notifications) substituindo localStorage","s":"in_progress","deadline":"2026-03-27"},{"id":"n4","label":"Mensagens internas persistidas (chat real) e/ou fórum","s":"in_progress","deadline":"2026-03-27"}],"deadline":"2026-04-21"},{"id":"infra","icon":"⚙️","color":"#5a5a8a","label":"Infraestrutura e Migração","sub":"Firebase, CI/CD e validação","progress":90,"notes":"","updatedAt":"2026-03-17T17:06:21.341Z","tasks":[{"id":"i1","label":"Remoção completa de dependências do Supabase no runtime","s":"done","priority":"low"},{"id":"i2","label":"Refatoração para Firestore nas páginas do Migrante","s":"done","priority":"low"},{"id":"i3","label":"Refatoração para Firestore nas páginas da Empresa","s":"done","priority":"low"},{"id":"i4","label":"Refatoração para Firestore nas páginas do CPC","s":"done","priority":"low"},{"id":"i5","label":"Remoção de variáveis de ambiente do Supabase (.env)","s":"done","priority":"low"},{"id":"i6","label":"Remoção do pacote @supabase/supabase-js e atualização do lockfile","s":"done","priority":"low"},{"id":"i7","label":"Script de migração Supabase → Firebase (Auth + Firestore) with dry-run","s":"done","priority":"low"},{"id":"i8","label":"Adição de dependência firebase-admin (Admin SDK)","s":"done","priority":"low"},{"id":"i9","label":"Automação: validação e notificações do project-tasks.md (CI + revisão diária)","s":"done","priority":"low"},{"id":"i10","label":"Migração completa: definir escopo e mapeamentos (tabelas/coleções/campos)","s":"todo","deadline":"2026-04-21"},{"id":"i11","label":"Migração completa: executar dry-run e gerar relatório de inconsistências","s":"todo","deadline":"2026-04-21"},{"id":"i12","label":"Validação pós-migração (contagens, integridade, permissões, índices)","s":"todo","deadline":"2026-04-22"}],"deadline":"2026-04-22"},{"id":"mmxin471alhl","label":"Painel Empresa","sub":"","icon":"🖥️","color":"#135bec","progress":0,"notes":"","deadline":null,"updatedAt":"2026-03-19T16:21:53.404Z","tasks":[{"id":"mmxoh37gv1x6","label":"Criação do dashboard empresa","s":"todo","priority":"medium","deadline":"2026-04-10"}]}],"history":[]}
+{
+  "sections": [
+    {
+      "id": "pub",
+      "icon": "🌐",
+      "color": "#1a5c42",
+      "label": "Parte Pública",
+      "sub": "Site, idioma e contactos",
+      "progress": 71,
+      "notes": "",
+      "updatedAt": "2026-03-24T14:32:01.529Z",
+      "tasks": [
+        {
+          "id": "p1",
+          "label": "Página inicial (home) com CTAs para registo/login como Pessoa Migrante e Empresa",
+          "s": "done",
+          "deadline": null,
+          "priority": "low"
+        },
+        {
+          "id": "p2",
+          "label": "Páginas públicas: Sobre, Como Funciona, Contactos + FAQ",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "p3",
+          "label": "Seleção de idioma (PT/EN/ES) com persistência",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "p4",
+          "label": "Formulário de contactos com envio real (backend/email)",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        },
+        {
+          "id": "mmuut5esg3j3",
+          "label": "Adicionar idioma Crioulo",
+          "s": "blocked",
+          "priority": "medium",
+          "deadline": null,
+          "obs": "Até o presente momento não foi possível adicionar. Não foi encontrado uma linguagem específica de adaptação em sistema."
+        },
+        {
+          "id": "mmuutns21odq",
+          "label": "Implementar Centro de Ajuda",
+          "s": "done",
+          "priority": "medium",
+          "deadline": "2026-03-20"
+        },
+        {
+          "id": "mmuutt6xquei",
+          "label": "Política de Cookies e a Política de Privacidade",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        }
+      ],
+      "deadline": "2026-04-03"
+    },
+    {
+      "id": "reg",
+      "icon": "👤",
+      "color": "#185FA5",
+      "label": "Registos e Perfis",
+      "sub": "Auth, roles e tipos de utilizador",
+      "progress": 69,
+      "notes": "",
+      "updatedAt": "2026-03-24T13:49:28.904Z",
+      "tasks": [
+        {
+          "id": "r1",
+          "label": "Registo/login por email para migrantes e empresas",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "r2",
+          "label": "Registo por telemóvel/OTP para migrantes",
+          "s": "todo",
+          "deadline": "2026-04-01"
+        },
+        {
+          "id": "r3",
+          "label": "Perfis internos CPC (mediador, jurista, psicólogo, gestor, coordenação, admin)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "r4",
+          "label": "Acesso ao painel CPC por perfil interno",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "r5",
+          "label": "Cada tipo só acede ao que lhe diz respeito (rotas protegidas por role + redirecionamento)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "r6",
+          "label": "Empresa: registo com nome e NIF",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "r7",
+          "label": "Empresa: campo \"área de atividade\" no registo/perfil",
+          "s": "todo",
+          "deadline": "2026-04-06"
+        },
+        {
+          "id": "mmuuulhjr4pf",
+          "label": "Alterar o e-mail porto@oportoforte.com para geral@oportoforte.com",
+          "s": "done",
+          "priority": "low",
+          "deadline": null
+        },
+        {
+          "id": "mmw3ma3nbggb",
+          "label": "Configuração de Regras de Perfil",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mmw3n5yqgifr",
+          "label": "Criação de funcionalidade de exclusão de cadastro de migrante",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mmw4orq685u4",
+          "label": "Implementação de um sistema de controle de acesso que verifique o status do usuário",
+          "s": "done",
+          "priority": "high",
+          "deadline": null
+        },
+        {
+          "id": "mn4o7nieuwgo",
+          "label": "Adicionar campo Ano de Registo ao perfil do migrante (para fins estatísticos e cumprimento de objetivos)",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o8clkuqed",
+          "label": "Adicionar campo Região ao perfil do migrante, com filtro por região (ex: apenas Algarve para metas do projeto)",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": null
+        }
+      ],
+      "deadline": "2026-04-06"
+    },
+    {
+      "id": "tri",
+      "icon": "📋",
+      "color": "#534AB7",
+      "label": "Triagem Inicial",
+      "sub": "Multi-passos, gravação e recomendações",
+      "progress": 75,
+      "notes": "",
+      "updatedAt": "2026-03-17T19:47:18.169Z",
+      "tasks": [
+        {
+          "id": "tr1",
+          "label": "Triagem inicial multi-passos no fluxo do migrante, obrigatória antes do dashboard",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tr2",
+          "label": "Gravação da triagem no Firestore (triage) com mapeamento para campos estruturados (legal_status, work_status, language_level, urgencies, interests)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tr3",
+          "label": "Autosave da triagem (rascunho local + sincronização remota)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tr4",
+          "label": "\"Perfil de necessidades\" dedicado + recomendações/direcionamento automático (trilha/sessão/CV)",
+          "s": "blocked",
+          "obs": "Depende de implementação de I.A."
+        }
+      ],
+      "deadline": "2026-04-22"
+    },
+    {
+      "id": "age",
+      "icon": "📅",
+      "color": "#993C1D",
+      "label": "Agendamentos e Atendimento",
+      "sub": "Sessões, notas e lembretes",
+      "progress": 40,
+      "notes": "",
+      "updatedAt": "2026-03-20T18:50:02.396Z",
+      "tasks": [
+        {
+          "id": "a1",
+          "label": "Migrante: marcar sessões (mediador/jurista/psicóloga) e ver sessões marcadas",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "a2",
+          "label": "Equipa CPC: criar, reagendar e cancelar sessões; filtrar por área e profissional",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "a3",
+          "label": "Equipa CPC: registar notas básicas das sessões",
+          "s": "in_progress",
+          "deadline": "2026-03-27"
+        },
+        {
+          "id": "a4",
+          "label": "Lembretes automáticos de sessão (email/notificações)",
+          "s": "todo",
+          "deadline": "2026-04-06"
+        },
+        {
+          "id": "mmz97gnv9v87",
+          "label": "Modal de agendamento full overlay",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-03-27"
+        }
+      ],
+      "deadline": "2026-04-06"
+    },
+    {
+      "id": "trl",
+      "icon": "🎓",
+      "color": "#0F6E56",
+      "label": "Trilhas Formativas",
+      "sub": "Catálogo, módulos, quizzes e progresso",
+      "progress": 67,
+      "notes": "",
+      "updatedAt": "2026-03-17T19:47:12.290Z",
+      "tasks": [
+        {
+          "id": "tf1",
+          "label": "Migrante: catálogo de trilhas, detalhe, visualização de módulos (texto/vídeo/pdf)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tf2",
+          "label": "Progresso por utilizador (user_trail_progress; demo quando não há dados)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tf3",
+          "label": "Equipa CPC: criar trilhas e gerir/editar módulos",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tf4",
+          "label": "Alternância de visualização grade/lista em \"Trilhas existentes\" (CPC)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "tf5",
+          "label": "Quizzes simples (modelo de dados, viewer, validação)",
+          "s": "todo",
+          "deadline": "2026-04-01"
+        },
+        {
+          "id": "tf6",
+          "label": "Trilha recomendada com base na triagem",
+          "s": "blocked",
+          "obs": "Depende de implementação de I.A."
+        }
+      ],
+      "deadline": "2026-04-01"
+    },
+    {
+      "id": "emp",
+      "icon": "💼",
+      "color": "#854F0B",
+      "label": "Ligação ao Emprego",
+      "sub": "Ofertas, candidaturas e CVs",
+      "progress": 67,
+      "notes": "",
+      "updatedAt": "2026-03-24T14:35:39.936Z",
+      "tasks": [
+        {
+          "id": "e1",
+          "label": "Migrante: ver ofertas e detalhe",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e2",
+          "label": "Migrante: candidatar-se diretamente (job_applications) com carta de apresentação opcional",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e3",
+          "label": "Migrante: acompanhar estado/histórico de candidaturas",
+          "s": "todo",
+          "deadline": "2026-04-24"
+        },
+        {
+          "id": "e4",
+          "label": "Empresa: criar ofertas e listar ofertas",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e5",
+          "label": "Empresa: editar ofertas",
+          "s": "todo",
+          "deadline": "2026-04-24"
+        },
+        {
+          "id": "e6",
+          "label": "Empresa: ver candidaturas recebidas por oferta e atualizar estado",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e7",
+          "label": "Empresa: ver perfil do candidato (inclui CV/link quando disponível)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e8",
+          "label": "CPC: ver candidaturas e listar ofertas pendentes de aprovação",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "e9",
+          "label": "CPC: aprovar/rejeitar/moderar ofertas (alterar status)",
+          "s": "todo",
+          "deadline": "2026-04-24"
+        }
+      ],
+      "deadline": "2026-04-24"
+    },
+    {
+      "id": "cpc",
+      "icon": "🖥️",
+      "color": "#3B6D11",
+      "label": "Painel Equipa CPC",
+      "sub": "Backoffice, perfis e relatórios",
+      "progress": 82,
+      "notes": "",
+      "updatedAt": "2026-03-24T14:33:01.319Z",
+      "tasks": [
+        {
+          "id": "c1",
+          "label": "Lista de migrantes com filtros + acesso ao perfil + consulta de triagem",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "c2",
+          "label": "Dashboard CPC com indicadores e exportação simples (CSV/PDF)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "c3",
+          "label": "\"Ver perfil\" redireciona para página interna with layout idêntico ao dashboard do migrante",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "c4",
+          "label": "Reestruturação do layout da \"Visão geral\" do CPC (grid, KPIs, cards, widgets)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "c5",
+          "label": "Overlay \"Em breve\" nas secções \"Capacidade Atual\" e \"Equipa em serviço\"",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "c6",
+          "label": "Relatórios/exportação abrangentes (atendimentos/ofertas/candidaturas) with filters",
+          "s": "done",
+          "deadline": "2026-03-27"
+        },
+        {
+          "id": "mn3cl39c4ac4",
+          "label": "Criação da sessão atividades",
+          "s": "done",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        },
+        {
+          "id": "mn3cm0i8yjmv",
+          "label": "Criação da tela de cadastro de atividades",
+          "s": "done",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        },
+        {
+          "id": "mn3fv8ul2z8d",
+          "label": "Criação da sessão estatísticas",
+          "s": "done",
+          "priority": "medium",
+          "deadline": "2026-04-10"
+        },
+        {
+          "id": "mn4nvb2eye14",
+          "label": "Secção de Atividades - Registro de Atividades: Data, Hora Início/Fim",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4nz0iz00k6",
+          "label": "Secção de Atividades - Registro de Atividades: Duração automática",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4nzbvjq9xf",
+          "label": "Secção de Atividades - Registro de Atividades: Consultor(es)",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        },
+        {
+          "id": "mn4o0g2uu5g7",
+          "label": "Secção de Atividades - Registro de Atividades: Participantes (migrantes + consultores)",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        },
+        {
+          "id": "mn4o0pghz8j6",
+          "label": "Secção de Atividades - Registro de Atividades: Temáticas",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o110p3cn4",
+          "label": "Secção de Atividades - Registro de Atividades: Local",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o19lopr55",
+          "label": "Secção de Atividades - Registro de Atividades: Tipo (Presencial / Online / Híbrido)",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o1we5duyz",
+          "label": "Secção de Estatísticas: Painel com: Nº de Migrantes inscritos",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o23zvhfe1",
+          "label": "Secção de Estatísticas: Nº que iniciaram e concluíram o Plano de Desenvolvimento",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-10"
+        },
+        {
+          "id": "mn4o2ay59ruz",
+          "label": "Secção de Estatísticas: % de início e conclusão",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-10"
+        },
+        {
+          "id": "mn4o2jeijcw3",
+          "label": "Secção de Estatísticas: Filtros por período (ex: migrantes registados em 2027)",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o3ckunj1q",
+          "label": "Exportação PDF: Estender todos os campos com exportação Excel para suportarem também exportação em PDF",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4o3k7frj90",
+          "label": "Exportação PDF: Todos os PDFs devem conter os logótipos obrigatórios do Projeto",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        }
+      ],
+      "deadline": "2026-04-10"
+    },
+    {
+      "id": "com",
+      "icon": "💬",
+      "color": "#993556",
+      "label": "Comunicação e Notificações",
+      "sub": "Chat, emails automáticos e notificações",
+      "progress": 25,
+      "notes": "",
+      "updatedAt": "2026-03-24T14:34:50.776Z",
+      "tasks": [
+        {
+          "id": "n1",
+          "label": "Notificações/chat/pedidos urgentes (MVP/demo via localStorage)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "n2",
+          "label": "Emails automáticos (criação de conta, lembretes, notificações de candidatura/oferta)",
+          "s": "todo",
+          "deadline": "2026-04-21"
+        },
+        {
+          "id": "n3",
+          "label": "Notificações in-app reais (coleção notifications) substituindo localStorage",
+          "s": "in_progress",
+          "deadline": "2026-03-31"
+        },
+        {
+          "id": "n4",
+          "label": "Mensagens internas persistidas (chat real) e/ou fórum",
+          "s": "in_progress",
+          "deadline": "2026-03-31"
+        }
+      ],
+      "deadline": "2026-04-21"
+    },
+    {
+      "id": "infra",
+      "icon": "⚙️",
+      "color": "#5a5a8a",
+      "label": "Infraestrutura e Migração",
+      "sub": "Firebase, CI/CD e validação",
+      "progress": 90,
+      "notes": "",
+      "updatedAt": "2026-03-17T17:06:21.341Z",
+      "tasks": [
+        {
+          "id": "i1",
+          "label": "Remoção completa de dependências do Supabase no runtime",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i2",
+          "label": "Refatoração para Firestore nas páginas do Migrante",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i3",
+          "label": "Refatoração para Firestore nas páginas da Empresa",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i4",
+          "label": "Refatoração para Firestore nas páginas do CPC",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i5",
+          "label": "Remoção de variáveis de ambiente do Supabase (.env)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i6",
+          "label": "Remoção do pacote @supabase/supabase-js e atualização do lockfile",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i7",
+          "label": "Script de migração Supabase → Firebase (Auth + Firestore) with dry-run",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i8",
+          "label": "Adição de dependência firebase-admin (Admin SDK)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i9",
+          "label": "Automação: validação e notificações do project-tasks.md (CI + revisão diária)",
+          "s": "done",
+          "priority": "low"
+        },
+        {
+          "id": "i10",
+          "label": "Migração completa: definir escopo e mapeamentos (tabelas/coleções/campos)",
+          "s": "todo",
+          "deadline": "2026-04-21"
+        },
+        {
+          "id": "i11",
+          "label": "Migração completa: executar dry-run e gerar relatório de inconsistências",
+          "s": "todo",
+          "deadline": "2026-04-21"
+        },
+        {
+          "id": "i12",
+          "label": "Validação pós-migração (contagens, integridade, permissões, índices)",
+          "s": "todo",
+          "deadline": "2026-04-22"
+        }
+      ],
+      "deadline": "2026-04-22"
+    },
+    {
+      "id": "mmxin471alhl",
+      "label": "Painel Empresa",
+      "sub": "",
+      "icon": "🖥️",
+      "color": "#135bec",
+      "progress": 100,
+      "notes": "",
+      "deadline": null,
+      "updatedAt": "2026-03-24T14:33:16.276Z",
+      "tasks": [
+        {
+          "id": "mmxoh37gv1x6",
+          "label": "Criação do dashboard empresa",
+          "s": "done",
+          "priority": "medium",
+          "deadline": "2026-04-10"
+        }
+      ]
+    },
+    {
+      "id": "mn4obtpcvu98",
+      "label": "Relatórios e Documentos",
+      "sub": "",
+      "icon": "📋",
+      "color": "#135bec",
+      "progress": 75,
+      "notes": "",
+      "deadline": "2026-04-03",
+      "updatedAt": "2026-03-24T14:33:53.657Z",
+      "tasks": [
+        {
+          "id": "mn4oejypk11q",
+          "label": "Geração de PDF individual por migrante com Ficha de Inscrição (nome, morada, contacto…)",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4oenqv768m",
+          "label": "Geração de PDF individual com Relatório de Progresso: % do Plano concluído, trilhas formativas, sessões individuais realizadas",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4oeqy8fggv",
+          "label": "Exportação das respostas do cadastro inicial do migrante em PDF",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4oeujnwj6s",
+          "label": "Todos os documentos com logótipos obrigatórios do Projeto",
+          "s": "todo",
+          "priority": "medium",
+          "deadline": "2026-04-03"
+        }
+      ]
+    }
+  ],
+  "history": [
+    {
+      "id": "mn4pvp5r1xuy",
+      "type": "update_task",
+      "description": "Prazo de \"CPC: aprovar/rejeitar/moderar ofertas (alterar status)\" atualizado para 2026-04-24",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:35:37.887Z"
+    },
+    {
+      "id": "mn4pvj84rops",
+      "type": "update_task",
+      "description": "Prazo de \"Empresa: editar ofertas\" atualizado para 2026-04-24",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:35:30.196Z"
+    },
+    {
+      "id": "mn4pvfdkjuiu",
+      "type": "update_task",
+      "description": "Prazo de \"Migrante: acompanhar estado/histórico de candidaturas\" atualizado para 2026-04-24",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:35:25.208Z"
+    },
+    {
+      "id": "mn4pucfpa3iz",
+      "type": "update_task",
+      "description": "Prazo de \"Mensagens internas persistidas (chat real) e/ou fórum\" atualizado para 2026-03-31",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:34:34.741Z"
+    },
+    {
+      "id": "mn4pu8cul6m3",
+      "type": "update_task",
+      "description": "Prazo de \"Notificações in-app reais (coleção notifications) substituindo localStorage\" atualizado para 2026-03-31",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:34:29.454Z"
+    },
+    {
+      "id": "mn4ptcyll238",
+      "type": "update_task",
+      "description": "Prazo de \"Todos os documentos com logótipos obrigatórios do Projeto\" atualizado para 2026-04-03",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:33:48.765Z"
+    },
+    {
+      "id": "mn4pt7v8b0ta",
+      "type": "update_task",
+      "description": "Status de \"Exportação das respostas do cadastro inicial do migrante em PDF\" alterado de Pendente para Concluído (Módulo: Relatórios e Documentos)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:33:42.164Z"
+    },
+    {
+      "id": "mn4pt567n4ta",
+      "type": "update_task",
+      "description": "Status de \"Geração de PDF individual com Relatório de Progresso: % do Plano concluído, trilhas formativas, sessões individuais realizadas\" alterado de Pendente para Concluído (Módulo: Relatórios e Documentos)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:33:38.671Z"
+    },
+    {
+      "id": "mn4pt04hjy8p",
+      "type": "update_task",
+      "description": "Status de \"Geração de PDF individual por migrante com Ficha de Inscrição (nome, morada, contacto…)\" alterado de Pendente para Concluído (Módulo: Relatórios e Documentos)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:33:32.129Z"
+    },
+    {
+      "id": "mn4psnw42nu6",
+      "type": "update_task",
+      "description": "Status de \"Criação do dashboard empresa\" alterado de Pendente para Concluído (Módulo: Painel Empresa)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:33:16.276Z"
+    },
+    {
+      "id": "mn4ps9k1cc5y",
+      "type": "update_task",
+      "description": "Prazo de \"Secção de Estatísticas: % de início e conclusão\" atualizado para 2026-04-10",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:32:57.697Z"
+    },
+    {
+      "id": "mn4ps01rk7hh",
+      "type": "update_task",
+      "description": "Prazo de \"Secção de Estatísticas: Nº que iniciaram e concluíram o Plano de Desenvolvimento\" atualizado para 2026-04-10",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:32:45.375Z"
+    },
+    {
+      "id": "mn4prrp63zht",
+      "type": "update_task",
+      "description": "Prazo de \"Secção de Atividades - Registro de Atividades: Participantes (migrantes + consultores)\" atualizado para 2026-04-03",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:32:34.554Z"
+    },
+    {
+      "id": "mn4prn8jkmsf",
+      "type": "update_task",
+      "description": "Prazo de \"Secção de Atividades - Registro de Atividades: Consultor(es)\" atualizado para 2026-04-03",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:32:28.771Z"
+    },
+    {
+      "id": "mn4ppsf43kbu",
+      "type": "update_task",
+      "description": "Prazo de \"Formulário de contactos com envio real (backend/email)\" atualizado para 2026-04-03",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:31:02.176Z"
+    },
+    {
+      "id": "mn4pp4owebkd",
+      "type": "update_task",
+      "description": "Status de \"Exportação PDF: Todos os PDFs devem conter os logótipos obrigatórios do Projeto\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:31.424Z"
+    },
+    {
+      "id": "mn4pox3r44zm",
+      "type": "update_task",
+      "description": "Status de \"Relatórios/exportação abrangentes (atendimentos/ofertas/candidaturas) with filters\" alterado de Em curso para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:21.591Z"
+    },
+    {
+      "id": "mn4pouftntk9",
+      "type": "update_task",
+      "description": "Status de \"Criação da sessão atividades\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:18.137Z"
+    },
+    {
+      "id": "mn4poshs2bq8",
+      "type": "update_task",
+      "description": "Status de \"Criação da tela de cadastro de atividades\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:15.616Z"
+    },
+    {
+      "id": "mn4popw0fjam",
+      "type": "update_task",
+      "description": "Status de \"Criação da sessão estatísticas\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:12.240Z"
+    },
+    {
+      "id": "mn4pon18wh08",
+      "type": "update_task",
+      "description": "Status de \"Secção de Atividades - Registro de Atividades: Data, Hora Início/Fim\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:08.540Z"
+    },
+    {
+      "id": "mn4polnimhlc",
+      "type": "update_task",
+      "description": "Status de \"Secção de Atividades - Registro de Atividades: Duração automática\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:30:06.750Z"
+    },
+    {
+      "id": "mn4podfjqiod",
+      "type": "update_task",
+      "description": "Status de \"Secção de Atividades - Registro de Atividades: Temáticas\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:29:56.095Z"
+    },
+    {
+      "id": "mn4pocelbyb4",
+      "type": "update_task",
+      "description": "Status de \"Secção de Atividades - Registro de Atividades: Local\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:29:54.765Z"
+    },
+    {
+      "id": "mn4poagc10qe",
+      "type": "update_task",
+      "description": "Status de \"Secção de Atividades - Registro de Atividades: Tipo (Presencial / Online / Híbrido)\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:29:52.236Z"
+    },
+    {
+      "id": "mn4pnvzjgnkh",
+      "type": "update_task",
+      "description": "Status de \"Secção de Estatísticas: Painel com: Nº de Migrantes inscritos\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:29:33.487Z"
+    },
+    {
+      "id": "mn4pnlnc5b07",
+      "type": "update_task",
+      "description": "Status de \"Secção de Estatísticas: Filtros por período (ex: migrantes registados em 2027)\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:29:20.088Z"
+    },
+    {
+      "id": "mn4pm5z1weov",
+      "type": "update_task",
+      "description": "Status de \"Exportação PDF: Estender todos os campos com exportação Excel para suportarem também exportação em PDF\" alterado de Pendente para Concluído (Módulo: Painel Equipa CPC)",
+      "user": "W. Renato",
+      "timestamp": "2026-03-24T14:28:13.117Z"
+    },
+    {
+      "id": "mn4oeujnllqw",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Todos os documentos com logótipos obrigatórios do Projeto\" ao módulo \"Relatórios e Documentos\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:54:32.099Z"
+    },
+    {
+      "id": "mn4oeqy8ibe2",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Exportação das respostas do cadastro inicial do migrante em PDF\" ao módulo \"Relatórios e Documentos\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:54:27.440Z"
+    },
+    {
+      "id": "mn4oenqvrymh",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Geração de PDF individual com Relatório de Progresso: % do Plano concluído, trilhas formativas, sessões individuais realizadas\" ao módulo \"Relatórios e Documentos\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:54:23.287Z"
+    },
+    {
+      "id": "mn4oejyqzr8b",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Geração de PDF individual por migrante com Ficha de Inscrição (nome, morada, contacto…)\" ao módulo \"Relatórios e Documentos\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:54:18.386Z"
+    },
+    {
+      "id": "mn4obtpc6mjo",
+      "type": "create_category",
+      "description": "Novo módulo \"Relatórios e Documentos\" criado",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:52:11.040Z"
+    },
+    {
+      "id": "mn4o8clkd5ui",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Adicionar campo Região ao perfil do migrante, com filtro por região (ex: apenas Algarve para metas do projeto)\" ao módulo \"Registos e Perfis\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:49:28.904Z"
+    },
+    {
+      "id": "mn4o881nhugs",
+      "type": "update_task",
+      "description": "Subcategoria \"Adicionar campo Ano de Registo - E-mail João\" renomeada para \"Adicionar campo Ano de Registo ao perfil do migrante (para fins estatísticos e cumprimento de objetivos)\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:49:23.003Z"
+    },
+    {
+      "id": "mn4o7s43toog",
+      "type": "update_task",
+      "description": "Subcategoria \"Adicionar campo Ano de Registo\" renomeada para \"Adicionar campo Ano de Registo - E-mail João\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:49:02.355Z"
+    },
+    {
+      "id": "mn4o7nie2vov",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Adicionar campo Ano de Registo\" ao módulo \"Registos e Perfis\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:48:56.390Z"
+    },
+    {
+      "id": "mn4o3k7f0o6r",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Exportação PDF: Todos os PDFs devem conter os logótipos obrigatórios do Projeto\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:45:45.483Z"
+    },
+    {
+      "id": "mn4o3ckus0eh",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Exportação PDF: Estender todos os campos com exportação Excel para suportarem também exportação em PDF\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:45:35.598Z"
+    },
+    {
+      "id": "mn4o2jeislyn",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Estatísticas: Filtros por período (ex: migrantes registados em 2027)\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:44:57.786Z"
+    },
+    {
+      "id": "mn4o2ay5aevc",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Estatísticas: % de início e conclusão\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:44:46.829Z"
+    },
+    {
+      "id": "mn4o23zv91is",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Estatísticas: Nº que iniciaram e concluíram o Plano de Desenvolvimento\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:44:37.819Z"
+    },
+    {
+      "id": "mn4o1we52qty",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Estatísticas: Painel com: Nº de Migrantes inscritos\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:44:27.965Z"
+    },
+    {
+      "id": "mn4o19lorzoa",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades - Registro de Atividades: Tipo (Presencial / Online / Híbrido)\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:43:58.428Z"
+    },
+    {
+      "id": "mn4o110p9egg",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades - Registro de Atividades: Local\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:43:47.305Z"
+    },
+    {
+      "id": "mn4o0pghdj5n",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades - Registro de Atividades: Temáticas\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:43:32.321Z"
+    },
+    {
+      "id": "mn4o0g2u3a41",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades - Registro de Atividades: Participantes (migrantes + consultores)\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:43:20.166Z"
+    },
+    {
+      "id": "mn4o03n9sh09",
+      "type": "update_task",
+      "description": "Subcategoria \"Secção de Atividades: Consultor(es)\" renomeada para \"Secção de Atividades - Registro de Atividades: Consultor(es)\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:43:04.053Z"
+    },
+    {
+      "id": "mn4nzzxawdvm",
+      "type": "update_task",
+      "description": "Subcategoria \"Secção de Atividades: Duração automática\" renomeada para \"Secção de Atividades - Registro de Atividades: Duração automática\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:42:59.230Z"
+    },
+    {
+      "id": "mn4nzulvedsv",
+      "type": "update_task",
+      "description": "Subcategoria \"Secção de Atividades: Data, Hora Início/Fim\" renomeada para \"Secção de Atividades - Registro de Atividades: Data, Hora Início/Fim\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:42:52.339Z"
+    },
+    {
+      "id": "mn4nzbvjetj3",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades: Consultor(es)\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:42:28.063Z"
+    },
+    {
+      "id": "mn4nz0izkvg1",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades: Duração automática\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:42:13.355Z"
+    },
+    {
+      "id": "mn4nyocgwce4",
+      "type": "update_task",
+      "description": "Subcategoria \"Secção de Atividades (Registo de atividades com campos: Data, Hora Início/Fim, Duração automática, Consultor(es), Participantes (migrantes + consultores), Temáticas, Local e Tipo (Presencial / Online / Híbrido) - E-mail João\" renomeada para \"Secção de Atividades: Data, Hora Início/Fim\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:41:57.568Z"
+    },
+    {
+      "id": "mn4nwyvefd1c",
+      "type": "update_task",
+      "description": "Subcategoria \"Secção de Atividades (Registo de atividades com campos: Data, Hora Início/Fim, Duração automática, Consultor(es), Participantes (migrantes + consultores), Temáticas, Local e Tipo (Presencial / Online / Híbrido)\" renomeada para \"Secção de Atividades (Registo de atividades com campos: Data, Hora Início/Fim, Duração automática, Consultor(es), Participantes (migrantes + consultores), Temáticas, Local e Tipo (Presencial / Online / Híbrido) - E-mail João\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:40:37.898Z"
+    },
+    {
+      "id": "mn4nvb2e9exw",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Secção de Atividades (Registo de atividades com campos: Data, Hora Início/Fim, Duração automática, Consultor(es), Participantes (migrantes + consultores), Temáticas, Local e Tipo (Presencial / Online / Híbrido)\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T13:39:20.390Z"
+    },
+    {
+      "id": "mn4lz5y7rg4n",
+      "type": "delete_task",
+      "description": "Subcategoria \"Teste\" removida do módulo \"Parte Pública\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T12:46:21.151Z"
+    },
+    {
+      "id": "mn4lyj94z23c",
+      "type": "create_task",
+      "description": "Adicionada subcategoria \"Teste\" ao módulo \"Parte Pública\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T12:45:51.736Z"
+    }
+  ]
+}
