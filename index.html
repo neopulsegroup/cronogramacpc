@@ -1153,6 +1153,7 @@ function renderSectionAdmin(s, i) {
             <button class="tiny-btn" onclick="openTaskDateModal(${i},${ti})" title="Definir prazo">📅</button>
             <button class="tiny-btn" onclick="editTaskObs(${i},${ti})" title="Adicionar Observação">💬</button>
             <button class="tiny-btn" onclick="editTaskLabel(${i},${ti})" title="Renomear">✎</button>
+            <button class="tiny-btn" onclick="editTaskSubcategory(${i},${ti})" title="Mover/Alterar Subcategoria">📁</button>
             <button class="tiny-btn del" onclick="deleteTask(${i},${ti})" title="Apagar">×</button>
           </div>
         </div>
@@ -1257,6 +1258,16 @@ function editTaskRequester(si, ti) {
   if (val === null) return;
   task.requester = val.trim() || null;
   addHistory('update_task', `Solicitante da tarefa "${task.label}" atualizado (Módulo: ${DATA.sections[si].label})`);
+  markUpdated(si); render(); scheduleSave();
+}
+
+function editTaskSubcategory(si, ti) {
+  const task = DATA.sections[si].tasks[ti];
+  const curr = task.subcategory || '';
+  const val = prompt('Digite a nova Subcategoria para mover a tarefa (deixe em branco para remover da subcategoria):', curr);
+  if (val === null) return;
+  task.subcategory = val.trim() || '';
+  addHistory('update_task', `Subcategoria da tarefa "${task.label}" alterada para "${task.subcategory || 'Nenhuma'}" (Módulo: ${DATA.sections[si].label})`);
   markUpdated(si); render(); scheduleSave();
 }
 

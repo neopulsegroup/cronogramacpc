@@ -166,7 +166,7 @@
       "sub": "Multi-passos, gravação e recomendações",
       "progress": 75,
       "notes": "",
-      "updatedAt": "2026-03-17T19:47:18.169Z",
+      "updatedAt": "2026-03-24T14:47:24.853Z",
       "tasks": [
         {
           "id": "tr1",
@@ -190,7 +190,8 @@
           "id": "tr4",
           "label": "\"Perfil de necessidades\" dedicado + recomendações/direcionamento automático (trilha/sessão/CV)",
           "s": "blocked",
-          "obs": "Depende de implementação de I.A."
+          "obs": "Depende de implementação de I.A.",
+          "deadline": "2026-04-30"
         }
       ],
       "deadline": "2026-04-22"
@@ -361,9 +362,9 @@
       "color": "#3B6D11",
       "label": "Painel Equipa CPC",
       "sub": "Backoffice, perfis e relatórios",
-      "progress": 82,
+      "progress": 83,
       "notes": "",
-      "updatedAt": "2026-03-24T14:33:01.319Z",
+      "updatedAt": "2026-03-24T14:55:24.559Z",
       "tasks": [
         {
           "id": "c1",
@@ -427,7 +428,8 @@
           "label": "Secção de Atividades - Registro de Atividades: Data, Hora Início/Fim",
           "s": "done",
           "priority": "medium",
-          "deadline": null
+          "deadline": null,
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4nz0iz00k6",
@@ -455,7 +457,8 @@
           "label": "Secção de Atividades - Registro de Atividades: Temáticas",
           "s": "done",
           "priority": "medium",
-          "deadline": null
+          "deadline": null,
+          "subcategory": "Secção de Atividades"
         },
         {
           "id": "mn4o110p3cn4",
@@ -509,6 +512,14 @@
         {
           "id": "mn4o3k7frj90",
           "label": "Exportação PDF: Todos os PDFs devem conter os logótipos obrigatórios do Projeto",
+          "s": "done",
+          "priority": "medium",
+          "deadline": null
+        },
+        {
+          "id": "mn4qbu8b83uz",
+          "label": "Registro de Atividades: Temáticas",
+          "subcategory": "Secção de Atividades",
           "s": "done",
           "priority": "medium",
           "deadline": null
@@ -701,6 +712,34 @@
     }
   ],
   "history": [
+    {
+      "id": "mn4ql4svvvp5",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Data, Hora Início/Fim\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:24.559Z"
+    },
+    {
+      "id": "mn4qkw8edrae",
+      "type": "update_task",
+      "description": "Subcategoria da tarefa \"Secção de Atividades - Registro de Atividades: Temáticas\" alterada para \"Secção de Atividades\" (Módulo: Painel Equipa CPC)",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:55:13.454Z"
+    },
+    {
+      "id": "mn4qbu8bzfbh",
+      "type": "create_task",
+      "description": "Adicionada tarefa \"Registro de Atividades: Temáticas\" ao módulo \"Painel Equipa CPC\"",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:48:10.955Z"
+    },
+    {
+      "id": "mn4qaunpewjj",
+      "type": "update_task",
+      "description": "Prazo de \"\"Perfil de necessidades\" dedicado + recomendações/direcionamento automático (trilha/sessão/CV)\" atualizado para 2026-04-30",
+      "user": "Silva J.",
+      "timestamp": "2026-03-24T14:47:24.853Z"
+    },
     {
       "id": "mn4pvp5r1xuy",
       "type": "update_task",
